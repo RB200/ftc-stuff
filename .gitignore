@@ -79,3 +79,31 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+/FtcRobotController/
+/TeamCode/src/main/AndroidManifest.xml
+/doc/legal/AudioBlocksSounds.txt
+/build.common.gradle
+/build.dependencies.gradle
+/TeamCode/build.gradle
+/build.gradle
+/.github/CONTRIBUTING.md
+/doc/legal/Exhibit A - LEGO Open Source License Agreement.txt
+/libs/ftc.debug.keystore
+/gradle.properties
+/gradle/wrapper/gradle-wrapper.jar
+/gradle/wrapper/gradle-wrapper.properties
+/gradlew
+/gradlew.bat
+/.vscode/launch.json
+/doc/legal/LEGO Open Source License.pdf
+/LICENSE
+/TeamCode/lib/OpModeAnnotationProcessor.jar
+/.github/PULL_REQUEST_TEMPLATE.md
+/doc/media/PullRequest.PNG
+/README.md
+/TeamCode/src/main/res/raw/readme.md
+/libs/README.txt
+/settings.gradle
+/.vscode/settings.json
+/TeamCode/src/main/res/values/strings.xml
+/TeamCode/src/main/res/xml/teamwebcamcalibrations.xml
