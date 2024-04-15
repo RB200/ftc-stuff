@@ -55,17 +55,20 @@ public class OpticalFlowSensor extends I2cDeviceSynchDevice<I2cDeviceSynch> {
 
     public OpticalFlowSensor(I2cDeviceSynch deviceClient){
         super(deviceClient,true);
-        I2cAddr addr = I2cAddr.create7bit(0x50);
+        I2cAddr addr = I2cAddr.create7bit(0x28);
         this.deviceClient.setI2cAddress(addr);
         super.registerArmingStateCallback(false);
         this.deviceClient.engage(); // communication over i2c
     }
     protected int readShort(Register reg){
+        deviceClient.write8(0xF0,0x02);
+        
         byte[] arr = {0x00,0x00};
         deviceClient.write(0x01,arr);
         //return TypeConversion.byteArrayToInt(deviceClient.read(0x00,2)); // should be 0x49
-        byte[] response = deviceClient.read(0x00,2);
-        return response[0] + (response[1] << 8);
+        byte[] response = deviceClient.read(0x01,2);
+        //return response[0] + (response[1] << 8);
+        return response[1];
     }
 
     public int getProductID(){
