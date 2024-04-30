@@ -12,7 +12,16 @@ public class OpticalFlowTest extends LinearOpMode {
         opticalFlow = hardwareMap.get(OpticalFlowSensor.class, "opt_flow");
         waitForStart();
         while(opModeIsActive()){
-            telemetry.addData("Product ID: ", opticalFlow.getProductID());
+            //byte[] prodID = opticalFlow.getProductID();
+            byte[] result = opticalFlow.readStuff();
+            for(int i = 0; i < result.length; i++){
+                telemetry.addData("byte" + i + ": ",result[i]);
+            }
+
+            //telemetry.addData("Inverse Product ID: ", result[4]);
+            //telemetry.addData("Delta X: ", opticalFlow.getDeltaX());
+            //telemetry.addData("Delta Y: ", opticalFlow.getDeltaY());
+
             telemetry.update();
         }
     }
