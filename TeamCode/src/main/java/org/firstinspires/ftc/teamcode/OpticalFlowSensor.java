@@ -163,6 +163,9 @@ public class OpticalFlowSensor extends I2cDeviceSynchDevice<I2cDeviceSynch> {
 
         deviceClient.write8(0xF0,0x0C);
 
+        // deviceClient.write(0x01,0x02);
+        // byte[] arr = {0x07,0x07};
+        // deviceClient.write(0x01,arr);
 
     }
     protected int readShort(Register reg){
@@ -181,9 +184,11 @@ public class OpticalFlowSensor extends I2cDeviceSynchDevice<I2cDeviceSynch> {
     public byte[] readStuff(){
 
         byte[] arr = {0x02,0x02,0x03,0x03,0x04,0x04,0x05,0x05,0x06,0x06};
+        //byte[] arr = {0x03,0x03,0x04,0x04,0x05,0x05,0x06,0x06,0x00};
         deviceClient.write(0x01,arr);
 
         return deviceClient.read(0x01,10);
+        // return deviceClient.read(0x01,9);
     }
     public short getDeltaX(){
 
